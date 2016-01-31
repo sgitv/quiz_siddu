@@ -1,7 +1,7 @@
 <?php
 require_once 'dbconnect.php';
 
-$retrive = $db->prepare("SELECT question,option1,option2,option3 FROM syllabus Where id = :id");
+$retrive = $db->prepare("SELECT id2,question,option1,option2,option3 FROM syllabus Where id = :id");
 $retrive->execute(array(':id'=>'2'));
 $items = $retrive->rowCount()? $retrive : [];
 ?>
@@ -16,12 +16,12 @@ $items = $retrive->rowCount()? $retrive : [];
 	<?php foreach($items as $item):?>
 		<li><?php echo $item['question'] ?>
 		<div>
-			<input type="radio" name = "<?php echo $item['option1'] ?>" id = "<?php echo $item['option1'] ?>" value="A" / >
-			<label for = "<?php echo $item['option1'] ?>">A)<?php echo $item['option1'] ?></label>
-			<input type="radio" name = "<?php echo $item['option1'] ?>" id = "<?php echo $item['option1'] ?>" value="B" / >
-			<label for = "<?php echo $item['option1'] ?>">B)<?php echo $item['option2'] ?></label>
-			<input type="radio" name = "<?php echo $item['option1'] ?>" id = "<?php echo $item['option1'] ?>" value="C" / >
-			<label for = "<?php echo $item['option1'] ?>">C)<?php echo $item['option3'] ?></label>
+			<input type="radio" name = "<?php echo $item['id2'] ?>" id = "<?php echo $item['id2'] ?>" value="A" / >
+			<label for = "<?php echo $item['id2'] ?>">A.<?php echo $item['option1'] ?></label>
+			<input type="radio" name = "<?php echo $item['id2'] ?>" id = "<?php echo $item['id2'] ?>" value="B" / >
+			<label for = "<?php echo $item['id2'] ?>">B.<?php echo $item['option2'] ?></label>
+			<input type="radio" name = "<?php echo $item['id2'] ?>" id = "<?php echo $item['id2'] ?>" value="C" / >
+			<label for = "<?php echo $item['id2'] ?>">C.<?php echo $item['option3'] ?></label>
 		</div>
 	<?php endforeach; ?>
 		</div>
