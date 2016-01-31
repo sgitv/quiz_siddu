@@ -1,8 +1,8 @@
 <?php
 require_once 'dbconnect.php';
-
-$retrive = $db->prepare("SELECT id2,question,option1,option2,option3 FROM syllabus Where id = :id");
-$retrive->execute(array(':id'=>'2'));
+$random = 1;//rand(1,2);
+$retrive = $db->prepare("SELECT id2,question,option1,option2,option3,option4 FROM syllabus Where id = :id");
+$retrive->execute(array(':id'=>$random));
 $items = $retrive->rowCount()? $retrive : [];
 ?>
 <!DOCTYPE html>
@@ -11,7 +11,7 @@ $items = $retrive->rowCount()? $retrive : [];
 	<title>Quiz</title>
 </head>
 <body>
-<form action = "check.php?id=2" method="post">
+<form action = "check.php?id=<?php echo $random;?>" method="post">
 	<ol>
 	<?php foreach($items as $item):?>
 		<li><?php echo $item['question'] ?>
@@ -22,6 +22,8 @@ $items = $retrive->rowCount()? $retrive : [];
 			<label for = "<?php echo $item['id2'] ?>">B.<?php echo $item['option2'] ?></label>
 			<input type="radio" name = "<?php echo $item['id2'] ?>" id = "<?php echo $item['id2'] ?>" value="C" / >
 			<label for = "<?php echo $item['id2'] ?>">C.<?php echo $item['option3'] ?></label>
+			<input type="radio" name = "<?php echo $item['id2'] ?>" id = "<?php echo $item['id2'] ?>" value="D" / >
+			<label for = "<?php echo $item['id2'] ?>">D.<?php echo $item['option4'] ?></label>
 		</div>
 	<?php endforeach; ?>
 		</div>
