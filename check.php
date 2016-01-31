@@ -279,5 +279,21 @@ if($do->correct(60,$answer60))
 {
 	$score += 1;
 }
-echo "yourscore is".$score."/30";
 ?>
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link href="bower_components\bootstrap\dist\css\bootstrap.css" rel="stylesheet">
+</head>
+<body>
+<nav class="navbar navbar-inverse" >
+
+</nav>
+<div class="jumbotron">
+  <h1>Result!</h1><h1><?php echo "You Got '".$score."' Out Of '30'";?></h1>
+  
+  
+
+</body>
+</html>

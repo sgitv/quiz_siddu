@@ -1,34 +1,19 @@
-<?php
-require_once 'dbconnect.php';
-$random = rand(1,2);
-$retrive = $db->prepare("SELECT id2,question,option1,option2,option3,option4 FROM syllabus Where id = :id");
-$retrive->execute(array(':id'=>$random));
-$items = $retrive->rowCount()? $retrive : [];
-?>
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Quiz</title>
+	<title>Start Quiz</title>
+	<link href="bower_components\bootstrap\dist\css\bootstrap.css" rel="stylesheet">
 </head>
 <body>
-<form action = "check.php?id=<?php echo $random;?>" method="post">
-	<ol>
-	<?php foreach($items as $item):?>
-		<li><?php echo $item['question'] ?>
-		<div>
-			<input type="radio" name = "<?php echo $item['id2'] ?>" id = "<?php echo $item['id2'] ?>" value="A" / >
-			<label for = "<?php echo $item['id2'] ?>">A.<?php echo $item['option1'] ?></label>
-			<input type="radio" name = "<?php echo $item['id2'] ?>" id = "<?php echo $item['id2'] ?>" value="B" / >
-			<label for = "<?php echo $item['id2'] ?>">B.<?php echo $item['option2'] ?></label>
-			<input type="radio" name = "<?php echo $item['id2'] ?>" id = "<?php echo $item['id2'] ?>" value="C" / >
-			<label for = "<?php echo $item['id2'] ?>">C.<?php echo $item['option3'] ?></label>
-			<input type="radio" name = "<?php echo $item['id2'] ?>" id = "<?php echo $item['id2'] ?>" value="D" / >
-			<label for = "<?php echo $item['id2'] ?>">D.<?php echo $item['option4'] ?></label>
-		</div>
-	<?php endforeach; ?>
-		</div>
-	</ol>	
-	<input type="submit" value = "finished">
-</form>
+<nav class="navbar navbar-inverse" >
+<h3 style="color:white;padding:5px">Home</h3>
+</nav>
+<div class="jumbotron">
+  <h1>General Knowledge and technical Quiz</h1>
+  <p>Each question carrys one mark, no negative marking, if you refresh the page the questions will change there are two sets of quiz papers, every time you refresh sets will interchange</p>
+  <p><a class="btn btn-primary btn-lg" href="main.php" role="button" style="margin-left:40%">Start Quiz</a></p>
+</div>
+
+
 </body>
 </html>
