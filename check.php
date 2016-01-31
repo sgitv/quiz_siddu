@@ -288,7 +288,7 @@ if($do->correct(60,$answer60))
 </head>
 <body>
 <nav class="navbar navbar-inverse" >
-
+<a href="index.php" style="margin-left:10px;padding:4px;margin-top:10px;"><input type ="button" class="btn btn-primary" value="Home"/></a>
 </nav>
 <div class="jumbotron">
   <h1>Result!</h1><h1><?php echo "You Got '".$score."' Out Of '30'";?></h1>
