@@ -79,7 +79,7 @@ if($do->correct(4,$answerFour))
 {
 	$score += 1;
 }
-if($do->correct(5,$answerFour))
+if($do->correct(5,$answerFive))
 {
 	$score += 1;
 }
@@ -107,7 +107,11 @@ if($do->correct(11,$answer11))
 {
 	$score += 1;
 }
-if($do->correct(12,$answer13))
+if($do->correct(12,$answer12))
+{
+	$score += 1;
+}
+if($do->correct(13,$answer13))
 {
 	$score += 1;
 }
@@ -115,11 +119,19 @@ if($do->correct(14,$answer14))
 {
 	$score += 1;
 }
-if($do->correct(15,$answer16))
+if($do->correct(15,$answer15))
 {
 	$score += 1;
 }
-if($do->correct(17,$answer18))
+if($do->correct(16,$answer16))
+{
+	$score += 1;
+}
+if($do->correct(17,$answer17))
+{
+	$score += 1;
+}
+if($do->correct(18,$answer18))
 {
 	$score += 1;
 }
@@ -247,7 +259,11 @@ if($do->correct(49,$answer49))
 {
 	$score += 1;
 }
-if($do->correct(50,$answer51))
+if($do->correct(50,$answer50))
+{
+	$score += 1;
+}
+if($do->correct(51,$answer51))
 {
 	$score += 1;
 }
@@ -255,11 +271,19 @@ if($do->correct(52,$answer52))
 {
 	$score += 1;
 }
-if($do->correct(53,$answer54))
+if($do->correct(53,$answer53))
 {
 	$score += 1;
 }
-if($do->correct(55,$answer56))
+if($do->correct(54,$answer54))
+{
+	$score += 1;
+}
+if($do->correct(55,$answer55))
+{
+	$score += 1;
+}
+if($do->correct(56,$answer56))
 {
 	$score += 1;
 }
