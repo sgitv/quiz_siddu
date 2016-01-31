@@ -1,6 +1,6 @@
 <?php
 require_once 'dbconnect.php';
-$random = 1;//rand(1,2);
+$random = rand(1,2);
 $retrive = $db->prepare("SELECT id2,question,option1,option2,option3,option4 FROM syllabus Where id = :id");
 $retrive->execute(array(':id'=>$random));
 $items = $retrive->rowCount()? $retrive : [];
